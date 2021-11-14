@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    color: ${colors.white};
     background-color: ${colors.black};
     font-family: ${fontFamilies.primary}, sans-serif;
   }
