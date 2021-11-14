@@ -34,10 +34,18 @@ const FooterLink = styled.a`
   color: ${colors.alto};
   cursor: pointer;
 
-  &:hover {
-    color: ${colors.white};
-    font-weight: 700;
-    transition: 0.2s;
+  &:after {
+    border-bottom: 1px solid transparent;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    transition: border-color 200ms, width 250ms;
+    width: 40%;
+  }
+
+  &:hover:after {
+    width: 100%;
+    border-bottom-color: ${colors.alto};
   }
 `
 

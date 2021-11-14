@@ -12,8 +12,8 @@ function Header() {
           <Image 
             src={headerLogo}
             alt="Star Wars logo"
-            height={170} 
-            width={170} 
+            height={120} 
+            width={120} 
           />
         </a>
       </Link>
