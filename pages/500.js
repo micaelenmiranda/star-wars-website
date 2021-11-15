@@ -15,8 +15,8 @@ function Custom500() {
   return(
     <>
       <Head>
-        <title>500: Internal Serve Error</title>
-        <meta name="description" content="500: Internal Serve Error" />
+        <title>500: Internal Server Error</title>
+        <meta name="description" content="500: Internal Server Error" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
@@ -30,7 +30,7 @@ function Custom500() {
           objectFit="cover"
         />
         
-        <ErrorTitle>500: Internal Serve Error</ErrorTitle>
+        <ErrorTitle>500: Internal Server Error</ErrorTitle>
       </ErrorContainer>
 
       <Footer />

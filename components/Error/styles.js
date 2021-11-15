@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors,fontFamilies, medias } from '../../styles/styleVariables'
+import { colors, fontFamilies, medias } from '../../styles/styleVariables'
 
 const ErrorContainer = styled.main`
   display: flex;

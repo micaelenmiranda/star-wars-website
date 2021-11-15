@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import GlobalStyles from '../styles/globalStyles'
 import Header from './../components/Header/index'
+import TitleSection from './../components/TitleSection/index'
 import Footer from './../components/Footer/index'
 
 import {
@@ -26,10 +27,12 @@ export default function IndexPage( { movies } ) {
       <Header />
 
       <MovieContainer>
+        <TitleSection />
+
         <MovieList>
           {movies.map(movie => {
             return(
-              <Link href="#" key={movie.title} passHref>
+              <Link href={movie.episode_id.toString()} key={movie.title} passHref>
                 <a>
                   <MovieCard>
                     <MovieCardSubtitle>Episode {movie.episode_id}</MovieCardSubtitle>
@@ -44,7 +47,6 @@ export default function IndexPage( { movies } ) {
       </MovieContainer>
 
       <Footer />
-
       <GlobalStyles />
     </>
   )

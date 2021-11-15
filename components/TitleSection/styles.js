@@ -6,6 +6,8 @@ const Title = styled.h1`
   font-family: ${fontFamilies.primary};
   font-size: 28px;
   font-weight: 400;
+  margin-bottom: 50px;
+  margin-top: 20px;
   text-align: center;
   text-transform: uppercase;
 
