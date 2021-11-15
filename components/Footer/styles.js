@@ -44,8 +44,8 @@ const FooterLink = styled.a`
   }
 
   &:hover:after {
-    width: 100%;
     border-bottom-color: ${colors.alto};
+    width: 100%;
   }
 `
 
