@@ -1,4 +1,4 @@
-# StarWarsApp
+# :milky_way: StarWarsApp
 
 _"A long time ago in a galaxy far, far away..."_
 
