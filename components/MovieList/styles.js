@@ -24,7 +24,7 @@ const MovieCardButton = styled.span `
   width: 100%;
 `
 
-const MovieList = styled.ul`
+const MovieContent = styled.ul`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 100%;
@@ -87,7 +87,7 @@ const MovieCardTitle = styled.h2`
 export {
   MovieContainer,
   MovieCardButton,
-  MovieList,
+  MovieContent,
   MovieCard,
   MovieCardSubtitle,
   MovieCardTitle

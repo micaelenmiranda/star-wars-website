@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import imageError from './../public/images/deathstar.gif'
 
-import GlobalStyles from './../styles/globalStyles'
 import Header from './../components/Header/index'
 import Footer from './../components/Footer/index'
 
@@ -34,8 +33,6 @@ function Custom500() {
       </ErrorContainer>
 
       <Footer />
-
-      <GlobalStyles />
     </>
   )
 }

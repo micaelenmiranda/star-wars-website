@@ -1,19 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
-import GlobalStyles from '../styles/globalStyles'
 import Header from './../components/Header/index'
-import TitleSection from './../components/TitleSection/index'
+import MovieList from './../components/MovieList/index'
 import Footer from './../components/Footer/index'
-
-import {
-  MovieContainer,
-  MovieCardButton,
-  MovieList,
-  MovieCard,
-  MovieCardSubtitle,
-  MovieCardTitle
-} from './../components/MovieList/styles'
 
 export default function IndexPage( { movies } ) {
   return (
@@ -25,29 +14,8 @@ export default function IndexPage( { movies } ) {
       </Head>
 
       <Header />
-
-      <MovieContainer>
-        <TitleSection />
-
-        <MovieList>
-          {movies.map((movie, index) => {
-            return(
-              <Link href={ `/${(index + 1)}` } key={movie.title} passHref>
-                <a>
-                  <MovieCard>
-                    <MovieCardSubtitle>Episode {movie.episode_id}</MovieCardSubtitle>
-                    <MovieCardTitle>{movie.title}</MovieCardTitle>
-                    <MovieCardButton>Movie Details</MovieCardButton>
-                  </MovieCard>
-                </a>
-              </Link>
-            )
-          })}
-        </MovieList>
-      </MovieContainer>
-
+      <MovieList movies={ movies }/>
       <Footer />
-      <GlobalStyles />
     </>
   )
 }
