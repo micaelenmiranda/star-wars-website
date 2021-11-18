@@ -41,7 +41,7 @@ function Description({ movie }) {
       <DescImage
         initial={{ opacity: 0 }}
         animate={{ opacity: imageLoading ? 0 : 1 }}
-        transition={( { opacity: { delay: 0.4, duration: 0.4 } }) }
+        transition={( { opacity: { delay: 0.5, duration: 0.4 } }) }
         onLoad={imageLoaded}
       >
         <Image 

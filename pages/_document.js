@@ -1,14 +1,25 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+
+import Document, { Html, Head, Main, NextScript } from 'next/document';
+
+import { ServerStyleSheet } from 'styled-components';
+export default class MyDocument extends Document {
+  static getInitialProps({ renderPage }) {
+    const sheet = new ServerStyleSheet();
+
+    const page = renderPage((App) => (props) =>
+      sheet.collectStyles(<App {...props} />),
+    );
+
+    const styleTags = sheet.getStyleElement();
+
+    return { ...page, styleTags };
   }
 
   render() {
     return (
       <Html>
         <Head>
+          {this.props.styleTags}
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
         </Head>
         <body>
@@ -16,8 +27,6 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
-
-export default MyDocument
