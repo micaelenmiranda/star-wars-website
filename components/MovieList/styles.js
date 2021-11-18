@@ -4,10 +4,14 @@ import { colors, fontFamilies, medias } from '../../styles/styleVariables'
 
 const MovieContainer = styled.main`
   color: ${colors.white};
-  margin: 0 auto;
+  margin: 140px auto 0 auto;
   max-width: 1200px;
   min-height: 440px;
   padding: 0 20px;
+
+  @media(min-width: ${medias.tablet}) {
+    margin: 0 auto;
+  }
 `
 
 const MovieCardButton = styled.span `
@@ -50,7 +54,7 @@ const MovieCard = styled.li`
   align-items: flex-start;
   justify-content: center;
   height: 220px;
-  padding: 25px;
+  padding: 30px;
   transition: all 0.5s ease;
   width: 100%;
 

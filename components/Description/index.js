@@ -18,10 +18,11 @@ import {
 } from './styles'
 
 function Description({ movie }) {
-  const formattedDate = new Date(movie.release_date).toLocaleString('en-US', {
+  const formattedDate = new Date(movie.release_date).toLocaleString('en-GB', {
     month: 'short',
     day: '2-digit',
     year: 'numeric',
+    timeZone: 'UTC'
   })
 
   const [imageLoading, setImageLoading] = useState(true);

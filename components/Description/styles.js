@@ -7,14 +7,11 @@ const DescContainer = styled(motion.article)`
   display: grid;
   grid-gap: 60px;
   grid-template-columns: 100%;
-  margin: 40px 25px;
+  margin: 140px 25px 40px 25px;
   max-width: 1120px;
 
   @media(min-width: ${medias.tablet}) { 
     grid-template-columns: 1fr 2fr;
-  }
-
-  @media(min-width: ${medias.desktopMedium}) { 
     margin: 40px auto;
   }
 `

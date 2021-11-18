@@ -2,20 +2,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import headerLogo from '../../public/images/star-wars-logo.svg'
 
-import { HeaderContainer } from './styles'
+import { 
+  HeaderContainer,
+  HeaderLogo
+} from './styles'
 
 function Header() {
   return(
     <HeaderContainer>
-      <Link href="/">
-        <a>
-          <Image 
-            src={headerLogo}
-            alt="Star Wars logo"
-            height={120} 
-            width={120} 
-          />
-        </a>
+      <Link href="/" passHref>
+          <HeaderLogo>
+            <Image 
+              src={headerLogo}
+              alt="Star Wars logo"
+            />
+          </HeaderLogo>
       </Link>
     </HeaderContainer>
   )
