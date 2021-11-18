@@ -20,7 +20,7 @@ export default function IndexPage( { movies } ) {
     <>   
       <Head>
         <title>Star Wars | Classic Movies Collection</title>
-        <meta name="description" content="A website dedicated to the Star Wars franchise" />
+        <meta name="description" content="A website dedicated to the Star Wars classic franchise" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
@@ -30,9 +30,9 @@ export default function IndexPage( { movies } ) {
         <TitleSection />
 
         <MovieList>
-          {movies.map(movie => {
+          {movies.map((movie, index) => {
             return(
-              <Link href={movie.episode_id.toString()} key={movie.title} passHref>
+              <Link href={ `/${(index + 1)}` } key={movie.title} passHref>
                 <a>
                   <MovieCard>
                     <MovieCardSubtitle>Episode {movie.episode_id}</MovieCardSubtitle>

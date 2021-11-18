@@ -74,14 +74,23 @@ const DescTextTitle = styled.h1`
   }
 `
 
-const DescTextSpan = styled.span`
+const DescTextLabel = styled.label`
   color: ${colors.lightGray};
   display: block;
   font-weight: 400;
 `
 
-const DescTextInfo = styled.p` 
+const DescTextTime = styled.time` 
   color: ${colors.white};
+  font-weight: 700;
+`
+
+const DescTextSpan = styled.span`
+  color: ${colors.white};
+  font-weight: 700;
+`
+
+const DescTextInfo = styled.p` 
   font-family: ${fontFamilies.primary}, sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -111,6 +120,8 @@ export {
   DescWrapper,
   DescTextSubtitle,
   DescTextTitle,
+  DescTextLabel,
+  DescTextTime,
   DescTextSpan,
   DescTextInfo,
   DescTextOpening

@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import GlobalStyles from '../styles/globalStyles'
-import Header from './../components/Header/index'
-import Footer from './../components/Footer/index'
+import Header from '../components/Header/index'
+import Footer from '../components/Footer/index'
 
 import {
   DescContainer,
@@ -12,17 +12,25 @@ import {
   DescWrapper,
   DescTextSubtitle,
   DescTextTitle,
+  DescTextLabel,
+  DescTextTime,
   DescTextSpan,
   DescTextInfo,
   DescTextOpening
-} from './../components/Description/styles'
+} from '../components/Description/styles'
 
 export default function SinglePage( { movie } ) {
-  return(
+  const formattedDate = new Date(movie.release_date).toLocaleString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  })
+
+  return(     
     <>
       <Head>
         <title>Star Wars - {movie.title}</title>
-        <meta name="description" content="" />
+        <meta name="description" content={`A brief description of the classic film ${movie.title}`} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
@@ -30,7 +38,12 @@ export default function SinglePage( { movie } ) {
 
       <DescContainer>
         <DescImage>
-          
+          <Image 
+            src={`/images/${movie.release_date}.jpg`}
+            alt={movie.title}
+            width={350}
+            height={532}
+          />
         </DescImage>
 
         <DescText>
@@ -39,18 +52,20 @@ export default function SinglePage( { movie } ) {
           
           <DescWrapper>
             <DescTextInfo>
-              <DescTextSpan>Director: </DescTextSpan>
-              {movie.director}
+              <DescTextLabel>Director: </DescTextLabel>
+              <DescTextSpan>{movie.director}</DescTextSpan>
             </DescTextInfo>
 
             <DescTextInfo>
-              <DescTextSpan>Producer: </DescTextSpan>
-              {movie.producer}
+              <DescTextLabel>Producer: </DescTextLabel>
+              <DescTextSpan>{movie.producer}</DescTextSpan>
             </DescTextInfo>
 
             <DescTextInfo>
-              <DescTextSpan>Release Date: </DescTextSpan>
-              {movie.release_date}
+              <DescTextLabel>Release Date: </DescTextLabel>
+              <DescTextTime dateTime={movie.release_date}>
+                {formattedDate}
+              </DescTextTime>
             </DescTextInfo>
           </DescWrapper>
 
@@ -68,9 +83,9 @@ export async function getStaticPaths() {
   const res = await fetch('https://swapi.dev/api/films/')
   const movies = await res.json()
 
-  const paths = movies.results.map((movie) => ({
+  const paths = movies.results.map((movie, index) => ({
     params: { 
-      slug: movie.episode_id.toString()
+      slug: (index + 1).toString()
     },
   }))
 
@@ -78,12 +93,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps( { params } ) {
-  const res = await fetch(`https://swapi.dev/api/films/${params.slug}`)
+  const res = await fetch(`https://swapi.dev/api/films/${params.slug}/`)
   const movie = await res.json()
   
   return { 
     props: { 
       movie
-    } 
+    }
   }
 }
