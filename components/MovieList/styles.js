@@ -1,4 +1,5 @@
 import styled, {  } from 'styled-components'
+import { motion } from 'framer-motion';
 import { colors, fontFamilies, medias } from '../../styles/styleVariables'
 
 const MovieContainer = styled.main`
@@ -24,7 +25,7 @@ const MovieCardButton = styled.span `
   width: 100%;
 `
 
-const MovieContent = styled.ul`
+const MovieContent = styled(motion.ul)`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 100%;

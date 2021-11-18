@@ -1,8 +1,6 @@
 import Head from 'next/head'
 
-import Header from './../components/Header/index'
 import MovieList from './../components/MovieList/index'
-import Footer from './../components/Footer/index'
 
 export default function IndexPage( { movies } ) {
   return (
@@ -13,9 +11,7 @@ export default function IndexPage( { movies } ) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <Header />
       <MovieList movies={ movies }/>
-      <Footer />
     </>
   )
 }

@@ -2,9 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import imageError from './../public/images/deathstar.gif'
 
-import Header from './../components/Header/index'
-import Footer from './../components/Footer/index'
-
 import { 
   ErrorContainer,
   ErrorTitle
@@ -19,8 +16,6 @@ function Custom500() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <Header />
-
       <ErrorContainer> 
         <Image 
           src={imageError}
@@ -31,8 +26,6 @@ function Custom500() {
         
         <ErrorTitle>500: Internal Server Error</ErrorTitle>
       </ErrorContainer>
-
-      <Footer />
     </>
   )
 }

@@ -1,4 +1,7 @@
 import Image from 'next/image'
+import { useState } from 'react'
+
+import { variants } from '../../styles/styleVariables'
 
 import {
   DescContainer,
@@ -21,9 +24,25 @@ function Description({ movie }) {
     year: 'numeric',
   })
 
+  const [imageLoading, setImageLoading] = useState(true);
+  const imageLoaded = () => {
+    setImageLoading(false);
+  };
+
   return(
-    <DescContainer>
-      <DescImage>
+    <DescContainer
+      variants={variants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      transition={{ type: 'linear' }}
+    >
+      <DescImage
+        initial={{ opacity: 0 }}
+        animate={{ opacity: imageLoading ? 0 : 1 }}
+        transition={( { opacity: { delay: 0.4, duration: 0.4 } }) }
+        onLoad={imageLoaded}
+      >
         <Image 
           src={`/images/${movie.release_date}.jpg`}
           alt={movie.title}

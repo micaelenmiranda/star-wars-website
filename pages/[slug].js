@@ -1,21 +1,16 @@
 import Head from 'next/head'
-
-import Header from '../components/Header/index'
 import Description from '../components/Description/index'
-import Footer from '../components/Footer/index'
 
 export default function SinglePage( { movie } ) {
   return(     
     <>
       <Head>
-        <title>Star Wars - {movie.title}</title>
+        <title>{movie.title} | Star Wars</title>
         <meta name="description" content={`A brief description of the classic film ${movie.title}`} />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <Header />
       <Description movie={ movie } />
-      <Footer />
     </>
   )
 }

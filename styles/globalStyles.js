@@ -14,10 +14,6 @@ const GlobalStyles = createGlobalStyle`
     font-family: ${fontFamilies.primary}, sans-serif;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
-
   a {
     text-decoration: none;
   }

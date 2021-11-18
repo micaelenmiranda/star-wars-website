@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion';
+
 import { colors, fontFamilies, medias } from '../../styles/styleVariables'
 
-const DescContainer = styled.article`
+const DescContainer = styled(motion.article)`
   display: grid;
   grid-gap: 60px;
   grid-template-columns: 100%;
@@ -17,7 +19,7 @@ const DescContainer = styled.article`
   }
 `
 
-const DescImage = styled.div` 
+const DescImage = styled(motion.div)` 
   text-align: center;
 `
 

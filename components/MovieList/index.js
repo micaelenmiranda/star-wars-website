@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import { variants } from './../../styles/styleVariables'
 import TitleSection from './../TitleSection/index'
 
 import {
@@ -16,10 +17,20 @@ function MovieList({ movies }) {
     <MovieContainer>
       <TitleSection />
 
-      <MovieContent>
+      <MovieContent
+        variants={variants}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        transition={{ type: 'linear' }}
+      >
         {movies.map((movie, index) => {
           return(
-            <Link href={ `/${(index + 1)}` } key={movie.title} passHref>
+            <Link 
+              href={ `/${(index + 1)}` } 
+              key={movie.title}
+              passHref
+            >
               <a>
                 <MovieCard>
                   <MovieCardSubtitle>Episode {movie.episode_id}</MovieCardSubtitle>
