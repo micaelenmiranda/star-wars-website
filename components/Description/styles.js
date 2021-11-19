@@ -12,6 +12,10 @@ const DescContainer = styled(motion.article)`
 
   @media(min-width: ${medias.tablet}) { 
     grid-template-columns: 1fr 2fr;
+    margin: 40px;
+  }
+
+  @media(min-width: ${medias.desktopMedium}) {
     margin: 40px auto;
   }
 `
