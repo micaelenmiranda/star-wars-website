@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Description from '../components/Description/index'
+import Description from '../../components/Description'
 
 export default function SinglePage( { movie } ) {
   return(     

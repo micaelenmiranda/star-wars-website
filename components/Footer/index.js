@@ -12,9 +12,9 @@ function Footer() {
       <FooterInfo>TM &amp; &copy; Lucasfilm Ltd. All Rights Reserved</FooterInfo>
   
       <FooterInfo>
-        <Link href="https://www.starwars.com/" passHref>
-          <FooterLink>Star Wars Official Website</FooterLink>
-        </Link>
+        <FooterLink href="https://www.starwars.com/" target="_blank">
+          Star Wars Official Website
+        </FooterLink>
       </FooterInfo>
     </FooterContainer>
   )

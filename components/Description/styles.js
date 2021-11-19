@@ -17,7 +17,11 @@ const DescContainer = styled(motion.article)`
 `
 
 const DescImage = styled(motion.div)` 
+  height: 532px;
+  margin: 0 auto;
+  position: relative;
   text-align: center;
+  width: 350px;
 `
 
 const DescText = styled.div` 

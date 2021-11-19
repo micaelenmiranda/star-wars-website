@@ -27,7 +27,7 @@ function MovieList({ movies }) {
         {movies.map((movie, index) => {
           return(
             <Link 
-              href={ `/${(index + 1)}` } 
+              href={ `/movie/${(index + 1)}` } 
               key={movie.title}
               passHref
             >

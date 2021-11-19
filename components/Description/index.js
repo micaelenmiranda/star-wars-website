@@ -47,8 +47,8 @@ function Description({ movie }) {
         <Image 
           src={`/images/${movie.release_date}.jpg`}
           alt={movie.title}
-          width={350}
-          height={532}
+          layout='fill'
+          objectFit='cover'
         />
       </DescImage>
 
