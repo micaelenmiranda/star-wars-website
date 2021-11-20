@@ -21,11 +21,16 @@ const DescContainer = styled(motion.article)`
 `
 
 const DescImage = styled(motion.div)` 
-  height: 532px;
+  height: 368px;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  width: 350px;
+  width: 270px;
+
+  @media(min-width: ${medias.mobileLandscape}) {
+    height: 532px;
+    width: 350px;
+  }
 `
 
 const DescText = styled.div` 

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Description from './../../components/Description/index'
+
 export default function SinglePage( { movie } ) {
   return(     
     <>
