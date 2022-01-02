@@ -2,10 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import imageError from './../public/images/deathstar.gif'
 
-import { 
-  ErrorContainer,
-  ErrorTitle
-} from '../components/Error/styles'
+import * as S from '../components/Error/styles'
 
 function Custom404() {
   return(
@@ -16,7 +13,7 @@ function Custom404() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <ErrorContainer> 
+      <S.ErrorContainer> 
         <Image 
           src={imageError}
           alt="Death Star"
@@ -24,8 +21,8 @@ function Custom404() {
           objectFit="cover"
         />
         
-        <ErrorTitle>404: Page Not Found</ErrorTitle>
-      </ErrorContainer>
+        <S.ErrorTitle>404: Page Not Found</S.ErrorTitle>
+      </S.ErrorContainer>
     </>
   )
 }

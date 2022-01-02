@@ -3,19 +3,7 @@ import { useState } from 'react'
 
 import { variants } from '../../styles/styleVariables'
 
-import {
-  DescContainer,
-  DescImage,
-  DescText,
-  DescWrapper,
-  DescTextSubtitle,
-  DescTextTitle,
-  DescTextLabel,
-  DescTextTime,
-  DescTextSpan,
-  DescTextInfo,
-  DescTextOpening
-} from './styles'
+import * as S from './styles'
 
 function Description({ movie }) {
   const formattedDate = new Date(movie.release_date).toLocaleString('en-GB', {
@@ -31,14 +19,14 @@ function Description({ movie }) {
   };
 
   return(
-    <DescContainer
+    <S.DescContainer
       variants={variants}
       initial="hidden"
       animate="enter"
       exit="exit"
       transition={{ type: 'linear' }}
     >
-      <DescImage
+      <S.DescImage
         initial={{ opacity: 0 }}
         animate={{ opacity: imageLoading ? 0 : 1 }}
         transition={( { opacity: { delay: 0.5, duration: 0.4 } }) }
@@ -50,10 +38,10 @@ function Description({ movie }) {
           layout='fill'
           objectFit='cover'
         />
-      </DescImage>
+      </S.DescImage>
 
-      <DescText>
-        <DescTextSubtitle>
+      <S.DescText>
+        <S.DescTextSubtitle>
           Episode
           {(() => {
             switch(movie.episode_id) {
@@ -72,31 +60,31 @@ function Description({ movie }) {
               default: (movie.episode_id)
             }
           })()}
-        </DescTextSubtitle>
-        <DescTextTitle>{movie.title}</DescTextTitle>
+        </S.DescTextSubtitle>
+        <S.DescTextTitle>{movie.title}</S.DescTextTitle>
         
-        <DescWrapper>
-          <DescTextInfo>
-            <DescTextLabel>Director: </DescTextLabel>
-            <DescTextSpan>{movie.director}</DescTextSpan>
-          </DescTextInfo>
+        <S.DescWrapper>
+          <S.DescTextInfo>
+            <S.DescTextLabel>Director: </S.DescTextLabel>
+            <S.DescTextSpan>{movie.director}</S.DescTextSpan>
+          </S.DescTextInfo>
 
-          <DescTextInfo>
-            <DescTextLabel>Producer: </DescTextLabel>
-            <DescTextSpan>{movie.producer}</DescTextSpan>
-          </DescTextInfo>
+          <S.DescTextInfo>
+            <S.DescTextLabel>Producer: </S.DescTextLabel>
+            <S.DescTextSpan>{movie.producer}</S.DescTextSpan>
+          </S.DescTextInfo>
 
-          <DescTextInfo>
-            <DescTextLabel>Release Date: </DescTextLabel>
-            <DescTextTime dateTime={movie.release_date}>
+          <S.DescTextInfo>
+            <S.DescTextLabel>Release Date: </S.DescTextLabel>
+            <S.DescTextTime dateTime={movie.release_date}>
               {formattedDate}
-            </DescTextTime>
-          </DescTextInfo>
-        </DescWrapper>
+            </S.DescTextTime>
+          </S.DescTextInfo>
+        </S.DescWrapper>
 
-        <DescTextOpening>&#34;{movie.opening_crawl}&#34;</DescTextOpening>
-      </DescText>
-    </DescContainer>
+        <S.DescTextOpening>&#34;{movie.opening_crawl}&#34;</S.DescTextOpening>
+      </S.DescText>
+    </S.DescContainer>
   )
 }
 

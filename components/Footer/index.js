@@ -1,22 +1,16 @@
-import Link from 'next/link'
-
-import { 
-  FooterContainer,
-  FooterInfo,
-  FooterLink
-} from './styles'
+import * as S from './styles'
 
 function Footer() {
   return(
-    <FooterContainer>
-      <FooterInfo>TM &amp; &copy; Lucasfilm Ltd. All Rights Reserved</FooterInfo>
+    <S.FooterContainer>
+      <S.FooterInfo>TM &amp; &copy; Lucasfilm Ltd. All Rights Reserved</S.FooterInfo>
   
-      <FooterInfo>
-        <FooterLink href="https://www.starwars.com/" target="_blank">
+      <S.FooterInfo>
+        <S.FooterLink href="https://www.starwars.com/" target="_blank">
           Star Wars Official Website
-        </FooterLink>
-      </FooterInfo>
-    </FooterContainer>
+        </S.FooterLink>
+      </S.FooterInfo>
+    </S.FooterContainer>
   )
 }
 

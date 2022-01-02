@@ -1,13 +1,10 @@
-import { 
-  Title,
-  TitleSpan
-} from './styles'
+import * as S from './styles'
 
 function TitleSection() {
   return(
-    <Title>
-      <TitleSpan>Classic movies</TitleSpan> collection
-    </Title>
+    <S.Title>
+      <S.TitleSpan>Classic movies</S.TitleSpan> collection
+    </S.Title>
   )
 }
 

@@ -3,21 +3,14 @@ import Link from 'next/link'
 import { variants } from './../../styles/styleVariables'
 import TitleSection from './../TitleSection/index'
 
-import {
-  MovieContainer,
-  MovieCardButton,
-  MovieContent,
-  MovieCard,
-  MovieCardSubtitle,
-  MovieCardTitle
-} from './styles'
+import * as S from './styles'
 
 function MovieList({ movies }) {
   return(
-    <MovieContainer>
+    <S.MovieContainer>
       <TitleSection />
 
-      <MovieContent
+      <S.MovieContent
         variants={variants}
         initial="hidden"
         animate="enter"
@@ -32,8 +25,8 @@ function MovieList({ movies }) {
               passHref
             >
               <a>
-                <MovieCard>
-                  <MovieCardSubtitle>
+                <S.MovieCard>
+                  <S.MovieCardSubtitle>
                     Episode
 
                     {(() => {
@@ -53,17 +46,17 @@ function MovieList({ movies }) {
                         default: (movie.episode_id)
                       }
                     })()}
-                  </MovieCardSubtitle>
+                  </S.MovieCardSubtitle>
                   
-                  <MovieCardTitle>{movie.title}</MovieCardTitle>
-                  <MovieCardButton>Movie Details</MovieCardButton>
-                </MovieCard>
+                  <S.MovieCardTitle>{movie.title}</S.MovieCardTitle>
+                  <S.MovieCardButton>Movie Details</S.MovieCardButton>
+                </S.MovieCard>
               </a>
             </Link>
           )
         })}
-      </MovieContent>
-    </MovieContainer>
+      </S.MovieContent>
+    </S.MovieContainer>
   )
 }
 
