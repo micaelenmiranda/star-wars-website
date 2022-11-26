@@ -35,8 +35,9 @@ function Description({ movie }) {
         <Image 
           src={`/images/${movie.release_date}.jpg`}
           alt={movie.title}
-          layout='fill'
-          objectFit='cover'
+          height={532}
+          width={350}
+          objectFit='contain'
         />
       </S.DescImage>
 
