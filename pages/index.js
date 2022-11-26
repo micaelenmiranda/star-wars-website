@@ -1,5 +1,4 @@
 import Head from 'next/head'
-
 import MovieList from './../components/MovieList/index'
 
 export default function IndexPage( { movies } ) {

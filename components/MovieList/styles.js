@@ -29,7 +29,7 @@ const MovieCardButton = styled.span `
   width: 100%;
 `
 
-const MovieContent = styled(motion.ul)`
+const MovieContent = styled(motion.div)`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 100%;
@@ -45,7 +45,7 @@ const MovieContent = styled(motion.ul)`
   }
 `
 
-const MovieCard = styled.li` 
+const MovieCard = styled.div` 
   background-color: ${colors.darkGray};
   border-radius: 5px;
   box-sizing: border-box;
@@ -70,10 +70,10 @@ const MovieCard = styled.li`
   }
 `
 
-const MovieCardSubtitle = styled.h3`
+const MovieCardSubtitle = styled.span`
   color: ${colors.white};
   font-family: ${fontFamilies.primary};
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 15px;
 `
