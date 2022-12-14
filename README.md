@@ -1,4 +1,4 @@
-# :milky_way: StarWarsApp
+# :milky_way: Star Wars Website
 
 _"A long time ago in a galaxy far, far away..."_
 
