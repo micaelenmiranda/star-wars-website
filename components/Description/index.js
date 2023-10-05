@@ -2,17 +2,11 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 import { variants } from '../../styles/styleVariables'
+import { formatIntergerToRoman, formatDateToEnGB }from './../../utils/helpers'
 
 import * as S from './styles'
 
 function Description({ movie }) {
-  const formattedDate = new Date(movie.release_date).toLocaleString('en-GB', {
-    month: 'short',
-    day: '2-digit',
-    year: 'numeric',
-    timeZone: 'UTC'
-  })
-
   const [imageLoading, setImageLoading] = useState(true);
   const imageLoaded = () => {
     setImageLoading(false);
@@ -44,23 +38,7 @@ function Description({ movie }) {
       <S.DescText>
         <S.DescTextSubtitle>
           Episode
-          {(() => {
-            switch(movie.episode_id) {
-              case 1:
-                return ' I'
-              case 2:
-                return ' II'
-              case 3:
-                return ' III'
-              case 4:
-                return ' IV'
-              case 5:
-                return ' V'
-              case 6:
-                return ' VI'
-              default: (movie.episode_id)
-            }
-          })()}
+          {formatIntergerToRoman(movie.episode_id)}
         </S.DescTextSubtitle>
         <S.DescTextTitle>{movie.title}</S.DescTextTitle>
         
@@ -78,7 +56,7 @@ function Description({ movie }) {
           <S.DescTextInfo>
             <S.DescTextLabel>Release Date: </S.DescTextLabel>
             <S.DescTextTime dateTime={movie.release_date}>
-              {formattedDate}
+              {formatDateToEnGB(movie.release_date)}
             </S.DescTextTime>
           </S.DescTextInfo>
         </S.DescWrapper>
