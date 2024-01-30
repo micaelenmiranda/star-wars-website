@@ -10,7 +10,7 @@ function Description({ movie }) {
   const [imageLoading, setImageLoading] = useState(true);
   const imageLoaded = () => {
     setImageLoading(false);
-  };
+  }
 
   return(
     <S.DescContainer
@@ -32,6 +32,7 @@ function Description({ movie }) {
           height={532}
           width={350}
           objectFit='contain'
+          loading={`eager`}
         />
       </S.DescImage>
 
